@@ -62,7 +62,7 @@ def read_text_lines(uploaded_file):
 
 def parse_uvvis_file(uploaded_file):
     """
-    Generic parser for UV-Vis exported CSV/TXT files.
+    Generic parser for UV-Vis exported ASC/CSV/TXT files.
     Attempts to find the first 2-column numeric table corresponding to wavelength + value.
     Returns wavelength array and measured signal array.
     """
@@ -347,7 +347,7 @@ def probe_values(details_dict, selected_datasets, wavelength_nm, plot_variant):
 # -------------------------------------------------
 st.title("UV-Vis Analyzer")
 st.caption(
-    "Upload a folder of UV-Vis datasets, switch between transmission and absorbance, optionally subtract a selected reference, and interactively inspect spectra."
+    "Upload a folder of UV-Vis datasets (.asc, .txt, .dat, or .csv), switch between transmission and absorbance, optionally subtract a selected reference, and interactively inspect spectra."
 )
 
 left, right = st.columns([1, 1.7], gap="large")
@@ -357,7 +357,7 @@ with left:
 
     measurement_files = st.file_uploader(
         "1. Drop all UV-Vis files",
-        type=["csv", "txt", "dat"],
+        type=["asc", "txt", "dat", "csv"],
         accept_multiple_files=True,
         key="uv_measurement_files",
     )
