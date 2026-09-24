@@ -15,6 +15,4 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-
-
-If no secret is configured, the app will still run locally without a password.
+Application for processing UV-Vis spectroscopy data, including spectral visualisation, comparison between samples, and extraction of relevant absorption/transmission metrics.
